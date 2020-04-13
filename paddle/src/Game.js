@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 class Game extends Component {
-	
+
 	constructor(props){
 		super(props);
+
+
 		this.state = {
 			WIDTH: props.width,
 			HEIGHT: props.height,
+			TIME: 0,
 			BALL: {
 				x: props.width/2,
 				y: props.height/2,
@@ -14,6 +17,8 @@ class Game extends Component {
 			}
 		}
 	}
+
+
 
 	draw = () => {
 		const ctx = this.refs.canvas.getContext('2d');

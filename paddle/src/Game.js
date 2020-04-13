@@ -1,4 +1,3 @@
-import { Vector } from './paddlepy/Vector.py';
 import React, { Component } from 'react';
 
 class Game extends Component {
@@ -9,7 +8,8 @@ class Game extends Component {
 			WIDTH: props.width,
 			HEIGHT: props.height,
 			BALL: {
-				pos: Vector(props.width/2, props.height/2),
+				x: props.width/2,
+				y: props.height/2,
 				radius: 20
 			}
 		}
@@ -19,7 +19,7 @@ class Game extends Component {
 		const ctx = this.refs.canvas.getContext('2d');
 		ctx.fillStyle = 'red';
 		ctx.beginPath();
-		ctx.arc(this.state.BALL.pos[0], this.state.BALL.pos[1],
+		ctx.arc(this.state.BALL.x, this.state.BALL.y,
 				this.state.BALL.radius, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.stroke();
